@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Maria Luiza Ribeiro | Nutricionista PhD - Especialista em Lipedema</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-clean: #fcfbfa; /* Fundo off-white sofisticado */
+            --text-dark: #2d312e; /* Grafite suave */
+            --accent-nude: #e6dfd9; /* Tom nude neutro */
+            --primary-rose: #c5a99e; /* Rosê antigo elegante */
+            --primary-dark: #a68c82;
+            --white: #ffffff;
+            --soft-green: #cbd5c0; /* Toque dos destaques do insta */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-clean);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Marcellus', serif;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--primary-rose);
+            color: var(--white);
+            padding: 18px 38px;
+            border-radius: 4px; /* Cantos quase retos, estética clean/médica */
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(197, 169, 158, 0.2);
+            text-align: center;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(197, 169, 158, 0.35);
+        }
+
+        /* --- HERO SECTION --- */
+        header {
+            padding: 100px 0;
+            background-color: #f7f5f2;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text .phd-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #7b8e76; /* Tom verde oliva suave */
+            background-color: rgba(203, 213, 192, 0.3);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            color: #5a615c;
+            font-weight: 300;
+        }
+
+        .hero-img {
+            text-align: center;
+        }
+
+        .hero-img img {
+            width: 100%;
+            max-width: 340px;
+            height: auto;
+            border-radius: 120px 120px 4px 4px; /* Arco superior sofisticado */
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+        }
+
+        /* --- OS PILARES DE TRATAMENTO --- */
+        .pillars-section {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: #777;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .pillar-card {
+            background-color: var(--bg-clean);
+            padding: 45px 30px;
+            border-radius: 4px;
+            border: 1px solid rgba(0,0,0,0.02);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.03);
+            border-color: var(--primary-rose);
+        }
+
+        .pillar-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: #5a615c;
+            font-weight: 300;
+        }
+
+        /* --- METODOLOGIA / CONSULTA --- */
+        .methodology {
+            padding: 100px 0;
+            background-color: #f7f5f2;
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .method-img img {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+        }
+
+        .method-steps .step {
+            margin-bottom: 35px;
+        }
+
+        .method-steps .step h4 {
+            font-family: 'Marcellus', serif;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .method-steps .step p {
+            color: #5a615c;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        /* --- SOBRE A PHD --- */
+        .about {
+            padding: 100px 0;
+            background-color: var(--white);
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content h2 {
+            font-size: 2.4rem;
+            margin-bottom: 30px;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: #4a504c;
+            margin-bottom: 25px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .about-content strong {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* --- CTA BANNER --- */
+        .cta-final {
+            padding: 100px 0;
+            background-color: #eae5df;
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-size: 2.6rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-final p {
+            font-size: 1.1rem;
+            color: #5a615c;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        footer {
+            background-color: #212322;
+            color: #a4aaa5;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        footer p {
+            font-weight: 300;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .hero-grid, .pillars-grid, .method-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-text {
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            .hero-img {
+                order: -1;
+            }
+            .hero-img img {
+                max-width: 260px;
+                border-radius: 50%;
+            }
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <header>
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="phd-badge">Mestre e PhD | CRN 10069</span>
+                <h1>Tratamento de excelência para a dor, inchaço e <span>estética no Lipedema</span></h1>
+                <p>O Lipedema vai muito além da estética. Sou a Dra. Maria Luiza Ribeiro e utilizo a ciência da nutrição avançada para te devolver a leveza, controlar as dores e reduzir o inchaço crônico de forma definitiva.</p>
+                <a href="https://api.whatsapp.com/send/?phone=5562999183461&text&type=phone_number&app_absent=0" class="btn-cta" target="_blank">Agendar Minha Consulta</a>
+            </div>
+            <div class="hero-img">
+                <!-- Foto extraída da imagem image_fe80a8.png -->
+                <img src="expert.jpg" alt="Dra. Maria Luiza Ribeiro">
+            </div>
+        </div>
+    </header>
+
+    <!-- TRÊS PILARES DA BIO -->
+    <section class="pillars-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Foco Integral na sua Saúde</h2>
+                <p>Abordagem baseada em evidências científicas</p>
+            </div>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3>Controle da Dor</h3>
+                    <p>Protocolos alimentares altamente anti-inflamatórios desenvolvidos para silenciar os gatilhos de dor tecidual causados pelo Lipedema.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Redução do Inchaço</h3>
+                    <p>Estratégias nutricionais específicas para otimizar a circulação linfática e reduzir drasticamente a retenção de líquidos e o peso nas pernas.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Estética & Forma</h3>
+                    <p>Alinhamento estético duradouro através de uma nutrição de precisão que preserva a massa magra e foca na perda de gordura inflamatória.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- METODOLOGIA CLÍNICA -->
+    <section class="methodology">
+        <div class="container method-grid">
+            <div class="method-img">
+                <img src="consulta.jpg" alt="Consulta Clínica Avançada">
+            </div>
+            <div class="method-steps">
+                <h2 style="font-size: 2.2rem; margin-bottom: 40px; font-family: 'Marcellus', serif;">O Método de Acompanhamento</h2>
+                
+                <div class="step">
+                    <h4>1. Avaliação Fisiológica Detalhada</h4>
+                    <p>Análise aprofundada dos sintomas do Lipedema, mapeamento de dores e análise metabólica para entender o grau de inflamação do seu organismo.</p>
+                </div>
+
+                <div class="step">
+                    <h4>2. Estratégia Anti-inflamatória Customizada</h4>
+                    <p>Desenvolvimento de um plano alimentar focado em alimentos reais, densos em nutrientes e com alto poder de desinflamação, adaptado ao seu paladar.</p>
+                </div>
+
+                <div class="step">
+                    <h4>3. Gerenciamento e Evolução Contínua</h4>
+                    <p>Suporte focado em resultados reais na redução do diâmetro dos membros afetados, melhora do aspecto da pele e controle total das dores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE A EXPERT -->
+    <section class="about">
+        <div class="container about-content">
+            <h2>Dra. Maria Luiza Ribeiro</h2>
+            <p>Atuo como nutricionista clínica com foco em <strong>Saúde, Beleza e tratamento do Lipedema</strong>. Acredito que o conhecimento acadêmico de ponta deve ser traduzido em soluções práticas e acolhedoras para o dia a dia do paciente.</p>
+            <p>Com a bagagem de <strong>Mestre e PhD</strong>, dedico minha carreira a ajudar mulheres a superarem os desafios físicos e emocionais do Lipedema, oferecendo um porto seguro e um direcionamento clínico irretocável.</p>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION FINAL -->
+    <section class="cta-final">
+        <div class="container">
+            <h2>Dê o primeiro passo rumo a uma vida leve</h2>
+            <p>Agende sua consulta para iniciar um tratamento verdadeiramente científico e humanizado. Toque no botão abaixo para falar diretamente no WhatsApp de agendamento.</p>
+            <a href="https://api.whatsapp.com/send/?phone=5562999183461&text&type=phone_number&app_absent=0" class="btn-cta" target="_blank">Quero Agendar Meu Tratamento</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Dra. Maria Luiza Ribeiro – Nutricionista | Lipedema. Todos os direitos reservados.</p>
+            <p style="margin-top: 5px; font-size: 0.75rem; opacity: 0.5;">Inscrição de Registro: CRN 10069</p>
+        </div>
+    </footer>
+
+</body>
+</html>
