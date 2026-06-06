@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
         :root {
@@ -17,7 +19,7 @@
             --primary-rose: #c5a99e; /* Rosê antigo elegante */
             --primary-dark: #a68c82;
             --white: #ffffff;
-            --soft-green: #cbd5c0; /* Toque dos destaques do insta */
+            --soft-green: #7b8e76; /* Tom verde oliva suave */
         }
 
         * {
@@ -33,7 +35,7 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Marcellus', serif;
             font-weight: 400;
             color: var(--text-dark);
@@ -45,8 +47,36 @@
             padding: 0 24px;
         }
 
+        /* --- NAVBAR MINIMALISTA --- */
+        .navbar {
+            padding: 25px 0;
+            background-color: #f7f5f2;
+            border-bottom: 1px solid rgba(0,0,0,0.02);
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: 'Marcellus', serif;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .nav-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--soft-green);
+            font-weight: 600;
+        }
+
         .btn-cta {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             background-color: var(--primary-rose);
             color: var(--white);
             padding: 18px 38px;
@@ -69,7 +99,7 @@
 
         /* --- HERO SECTION --- */
         header {
-            padding: 100px 0;
+            padding: 70px 0 90px 0;
             background-color: #f7f5f2;
             border-bottom: 1px solid rgba(0,0,0,0.03);
         }
@@ -82,16 +112,18 @@
         }
 
         .hero-text .phd-badge {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #7b8e76; /* Tom verde oliva suave */
+            color: var(--soft-green);
             background-color: rgba(203, 213, 192, 0.3);
             padding: 6px 14px;
             border-radius: 30px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .hero-text h1 {
@@ -100,11 +132,41 @@
             margin-bottom: 25px;
         }
 
+        .hero-text h1 span {
+            color: var(--primary-dark);
+        }
+
         .hero-text p {
             font-size: 1.1rem;
             margin-bottom: 35px;
             color: #5a615c;
             font-weight: 300;
+        }
+
+        /* Selos Rápidos da Primeira Dobra */
+        .hero-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: #5a615c;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .feature-item i {
+            color: var(--soft-green);
+            flex-shrink: 0;
         }
 
         .hero-img {
@@ -115,7 +177,7 @@
             width: 100%;
             max-width: 340px;
             height: auto;
-            border-radius: 120px 120px 4px 4px; /* Arco superior sofisticado */
+            border-radius: 120px 120px 4px 4px;
             border: 1px solid rgba(0,0,0,0.05);
             box-shadow: 0 20px 40px rgba(0,0,0,0.04);
         }
@@ -139,9 +201,10 @@
 
         .section-header p {
             color: #777;
-            font-size: 1rem;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            font-weight: 600;
         }
 
         .pillars-grid {
@@ -164,12 +227,85 @@
             border-color: var(--primary-rose);
         }
 
+        .pillar-icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px auto;
+            color: var(--primary-rose);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
         .pillar-card h3 {
             font-size: 1.6rem;
             margin-bottom: 15px;
         }
 
         .pillar-card p {
+            font-size: 0.95rem;
+            color: #5a615c;
+            font-weight: 300;
+        }
+
+        /* --- NOVA DOBRA: IDENTIFICAÇÃO DE SINTOMAS --- */
+        .symptoms-section {
+            padding: 100px 0;
+            background-color: #f3f0ec;
+        }
+
+        .symptoms-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .symptoms-title h2 {
+            font-size: 2.4rem;
+            margin-bottom: 20px;
+        }
+
+        .symptoms-title p {
+            color: #5a615c;
+            font-size: 1.05rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .symptoms-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .symptom-card {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 4px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            border-left: 4px solid #d97706; /* Cor sutil de alerta técnico */
+        }
+
+        .symptom-card i {
+            color: #d97706;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .symptom-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 5px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 600;
+        }
+
+        .symptom-card p {
             font-size: 0.95rem;
             color: #5a615c;
             font-weight: 300;
@@ -197,7 +333,22 @@
         }
 
         .method-steps .step {
+            display: flex;
+            gap: 20px;
             margin-bottom: 35px;
+        }
+
+        .step-icon-box {
+            width: 45px;
+            height: 45px;
+            background-color: var(--white);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--soft-green);
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
         }
 
         .method-steps .step h4 {
@@ -222,6 +373,11 @@
         .about-content {
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        .about-icon {
+            color: var(--primary-rose);
+            margin-bottom: 20px;
         }
 
         .about-content h2 {
@@ -279,7 +435,7 @@
 
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 768px) {
-            .hero-grid, .pillars-grid, .method-grid {
+            .hero-grid, .pillars-grid, .method-grid, .symptoms-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
@@ -289,12 +445,16 @@
             .hero-text h1 {
                 font-size: 2.2rem;
             }
+            .hero-features {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                justify-items: center;
+            }
             .hero-img {
                 order: -1;
             }
             .hero-img img {
                 max-width: 260px;
-                border-radius: 50%;
             }
             .section-header h2 {
                 font-size: 1.8rem;
@@ -304,17 +464,44 @@
 </head>
 <body>
 
-    <!-- HERO SECTION -->
+    <!-- NAVBAR MINIMALISTA -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-logo">Dra. Maria Luiza Ribeiro</div>
+            <div class="nav-tag">Nutrição Avançada</div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (PRIMEIRA DOBRA) -->
     <header>
         <div class="container hero-grid">
             <div class="hero-text">
-                <span class="phd-badge">Mestre e PhD | CRN 10069</span>
+                <span class="phd-badge"><i data-lucide="award" style="width:16px;height:16px;"></i> Mestre e PhD | CRN 10069</span>
                 <h1>Tratamento de excelência para a dor, inchaço e <span>estética no Lipedema</span></h1>
-                <p>O Lipedema vai muito além da estética. Sou a Dra. Maria Luiza Ribeiro e utilizo a ciência da nutrição avançada para te devolver a leveza, controlar as dores e reduzir o inchaço crônico de forma definitiva.</p>
-                <a href="https://api.whatsapp.com/send/?phone=5562999183461&text&type=phone_number&app_absent=0" class="btn-cta" target="_blank">Agendar Minha Consulta</a>
+                <p>O Lipedema vai muito além da estética. Utilizo a ciência da nutrição de precisão para te devolver a leveza, controlar as dores e reduzir o inchaço crônico de forma definitiva.</p>
+                
+                <a href="https://api.whatsapp.com/send/?phone=5562999183461&text&type=phone_number&app_absent=0" class="btn-cta" target="_blank">
+                    <span>Agendar Minha Consulta</span>
+                    <i data-lucide="arrow-right" style="width:18px;height:18px;"></i>
+                </a>
+
+                <!-- Elementos de Confiança Adicionados na 1ª Dobra -->
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <i data-lucide="globe" style="width:18px;height:18px;"></i>
+                        <span>Online ou Presencial</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="shield-check" style="width:18px;height:18px;"></i>
+                        <span>Base Científica</span>
+                    </div>
+                    <div class="feature-item">
+                        <i data-lucide="heart-handshake" style="width:18px;height:18px;"></i>
+                        <span>Suporte Individual</span>
+                    </div>
+                </div>
             </div>
             <div class="hero-img">
-                <!-- Foto extraída da imagem image_fe80a8.png -->
                 <img src="expert.jpg" alt="Dra. Maria Luiza Ribeiro">
             </div>
         </div>
@@ -330,16 +517,55 @@
             
             <div class="pillars-grid">
                 <div class="pillar-card">
+                    <div class="pillar-icon-box"><i data-lucide="activity" style="width:28px;height:28px;"></i></div>
                     <h3>Controle da Dor</h3>
                     <p>Protocolos alimentares altamente anti-inflamatórios desenvolvidos para silenciar os gatilhos de dor tecidual causados pelo Lipedema.</p>
                 </div>
                 <div class="pillar-card">
+                    <div class="pillar-icon-box"><i data-lucide="droplet" style="width:28px;height:28px;"></i></div>
                     <h3>Redução do Inchaço</h3>
                     <p>Estratégias nutricionais específicas para otimizar a circulação linfática e reduzir drasticamente a retenção de líquidos e o peso nas pernas.</p>
                 </div>
                 <div class="pillar-card">
+                    <div class="pillar-icon-box"><i data-lucide="sparkles" style="width:28px;height:28px;"></i></div>
                     <h3>Estética & Forma</h3>
                     <p>Alinhamento estético duradouro através de uma nutrição de precisão que preserva a massa magra e foca na perda de gordura inflamatória.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA DOBRA: PARA QUEM É ESTE ACOMPANHAMENTO -->
+    <section class="symptoms-section">
+        <div class="container symptoms-grid">
+            <div class="symptoms-title">
+                <h2>Você se reconhece nestes sintomas?</h2>
+                <p>O Lipedema é frequentemente confundido com obesidade ou celulite comum, mas é uma condição médica que exige rastreio e plano alimentar direcionado.</p>
+                <a href="https://api.whatsapp.com/send/?phone=5562999183461&text&type=phone_number&app_absent=0" class="btn-cta" target="_blank">
+                    <span>Investigar Meus Sintomas</span>
+                </a>
+            </div>
+            <div class="symptoms-list">
+                <div class="symptom-card">
+                    <i data-lucide="alert-circle" style="width:24px;height:24px;"></i>
+                    <div>
+                        <h4>Dificuldade de emagrecimento nos membros</h4>
+                        <p>Você perde peso no tronco, mas o tamanho das pernas e braços permanece praticamente inalterado.</p>
+                    </div>
+                </div>
+                <div class="symptom-card">
+                    <i data-lucide="alert-circle" style="width:24px;height:24px;"></i>
+                    <div>
+                        <h4>Sensibilidade e dor ao toque</h4>
+                        <p>Sensação constante de pernas pesadas, cansadas e dor ao menor sinal de pressão ou impacto local.</p>
+                    </div>
+                </div>
+                <div class="symptom-card">
+                    <i data-lucide="alert-circle" style="width:24px;height:24px;"></i>
+                    <div>
+                        <h4>Hematomas frequentes e espontâneos</h4>
+                        <p>Manchas roxas que surgem nas pernas com extrema facilidade, mesmo sem você se lembrar de ter batido.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -352,21 +578,30 @@
                 <img src="consulta.jpg" alt="Consulta Clínica Avançada">
             </div>
             <div class="method-steps">
-                <h2 style="font-size: 2.2rem; margin-bottom: 40px; font-family: 'Marcellus', serif;">O Método de Acompanhamento</h2>
+                <h2 style="font-size: 2.2rem; margin-bottom: 40px;">O Método de Acompanhamento</h2>
                 
                 <div class="step">
-                    <h4>1. Avaliação Fisiológica Detalhada</h4>
-                    <p>Análise aprofundada dos sintomas do Lipedema, mapeamento de dores e análise metabólica para entender o grau de inflamação do seu organismo.</p>
+                    <div class="step-icon-box"><i data-lucide="stethoscope" style="width:20px;height:20px;"></i></div>
+                    <div>
+                        <h4>1. Avaliação Fisiológica Detalhada</h4>
+                        <p>Análise aprofundada dos sintomas do Lipedema, mapeamento de dores e análise metabólica para entender o grau de inflamação do seu organismo.</p>
+                    </div>
                 </div>
 
                 <div class="step">
-                    <h4>2. Estratégia Anti-inflamatória Customizada</h4>
-                    <p>Desenvolvimento de um plano alimentar focado em alimentos reais, densos em nutrientes e com alto poder de desinflamação, adaptado ao seu paladar.</p>
+                    <div class="step-icon-box"><i data-lucide="salad" style="width:20px;height:20px;"></i></div>
+                    <div>
+                        <h4>2. Estratégia Anti-inflamatória Customizada</h4>
+                        <p>Desenvolvimento de um plano alimentar focado em alimentos reais, densos em nutrientes e com alto poder de desinflamação, adaptado ao seu paladar.</p>
+                    </div>
                 </div>
 
                 <div class="step">
-                    <h4>3. Gerenciamento e Evolução Contínua</h4>
-                    <p>Suporte focado em resultados reais na redução do diâmetro dos membros afetados, melhora do aspecto da pele e controle total das dores.</p>
+                    <div class="step-icon-box"><i data-lucide="trending-up" style="width:20px;height:20px;"></i></div>
+                    <div>
+                        <h4>3. Gerenciamento e Evolução Contínua</h4>
+                        <p>Suporte focado em resultados reais na redução do diâmetro dos membros afetados, melhora do aspecto da pele e controle total das dores.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -375,6 +610,7 @@
     <!-- SOBRE A EXPERT -->
     <section class="about">
         <div class="container about-content">
+            <div class="about-icon"><i data-lucide="graduation-cap" style="width:40px;height:40px;margin:0 auto;"></i></div>
             <h2>Dra. Maria Luiza Ribeiro</h2>
             <p>Atuo como nutricionista clínica com foco em <strong>Saúde, Beleza e tratamento do Lipedema</strong>. Acredito que o conhecimento acadêmico de ponta deve ser traduzido em soluções práticas e acolhedoras para o dia a dia do paciente.</p>
             <p>Com a bagagem de <strong>Mestre e PhD</strong>, dedico minha carreira a ajudar mulheres a superarem os desafios físicos e emocionais do Lipedema, oferecendo um porto seguro e um direcionamento clínico irretocável.</p>
@@ -386,7 +622,10 @@
         <div class="container">
             <h2>Dê o primeiro passo rumo a uma vida leve</h2>
             <p>Agende sua consulta para iniciar um tratamento verdadeiramente científico e humanizado. Toque no botão abaixo para falar diretamente no WhatsApp de agendamento.</p>
-            <a href="https://api.whatsapp.com/send/?phone=5562999183461&text&type=phone_number&app_absent=0" class="btn-cta" target="_blank">Quero Agendar Meu Tratamento</a>
+            <a href="https://api.whatsapp.com/send/?phone=5562999183461&text&type=phone_number&app_absent=0" class="btn-cta" target="_blank">
+                <span>Quero Agendar Meu Tratamento</span>
+                <i data-lucide="message-circle" style="width:18px;height:18px;"></i>
+            </a>
         </div>
     </section>
 
@@ -398,5 +637,9 @@
         </div>
     </footer>
 
+    <!-- Script para renderizar os ícones do Lucide automaticamente -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
